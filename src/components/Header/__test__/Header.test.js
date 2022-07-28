@@ -2,10 +2,12 @@ import { render, screen } from '@testing-library/react';
 import Header from '../Header';
 
 // getByText
-test('should render same text passed into title prop', async () => {
-  render(<Header title="My header" />);
-  const headingElement = screen.getByText(/my header/i);
-  expect(headingElement).toBeInTheDocument();
+describe('Header test', () => {
+  test('should render same text passed into title prop', async () => {
+    render(<Header title="My header" />);
+    const headingElement = screen.getByText(/my header/i);
+    expect(headingElement).toBeInTheDocument();
+  });
 });
 
 // getByRole (if the role was switched to something other than heading, it would fail the test) This also fails if there are multiple headers.
